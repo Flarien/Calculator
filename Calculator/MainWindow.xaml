@@ -5,11 +5,92 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="My First Calculator" Height="1024" Width="620">
+        Title="My First Calculator" Height="700" Width="400">
+
     <Grid Name="Container" Background="#FF2B2B2B" >
-        <TextBlock Margin="15" HorizontalAlignment="Center" FontSize="30" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="White">STANDARD CALCULATOR</TextBlock>
-        
-        <Grid></Grid>
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" >
+            <TextBlock Margin="20" HorizontalAlignment="Center" FontSize="28" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="White">STANDARD CALCULATOR</TextBlock>
+            <TextBlock x:Name="txtOperacion" Margin="0, 0, 30, 0" HorizontalAlignment="Right" FontSize="18" FontFamily="Barlow Condensed" FontWeight="Bold" Foreground="Gray"></TextBlock>
+            <TextBox x:Name="txtPanel" HorizontalAlignment="Stretch" Text="0" FontSize="70" FontFamily="Barlow Condensed" Background="#FF2B2B2B" FontWeight="Bold" Foreground="White" Width="344" TextAlignment="Right" Height="75" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" HorizontalAlignment="Center" FontSize="25" FontFamily="Barlow Condensed Light" FontWeight="Bold" Foreground="Gray">MC</TextBlock>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" FontSize="25" FontFamily="Barlow Condensed Light" FontWeight="Bold" Foreground="Gray">MR</TextBlock>
+                <TextBlock Grid.Column="2" HorizontalAlignment="Center" FontSize="25" FontFamily="Barlow Condensed Light" FontWeight="Bold" Foreground="White">M+</TextBlock>
+                <TextBlock Grid.Column="3" HorizontalAlignment="Center" FontSize="25" FontFamily="Barlow Condensed Light" FontWeight="Bold" Foreground="White">M-</TextBlock>
+                <TextBlock Grid.Column="4" HorizontalAlignment="Center" FontSize="25" FontFamily="Barlow Condensed Light" FontWeight="Bold" Foreground="White">MS</TextBlock>
+                <TextBlock Grid.Column="5" HorizontalAlignment="Center" FontSize="25" FontFamily="Barlow Condensed Light" FontWeight="Bold" Foreground="Gray">M⏑</TextBlock>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Content="%" Click="BotonOperacion_Click" Margin="2" FontSize="25" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="CE" Click="BotonCE_Click" Margin="2" FontSize="25" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+                <Button Grid.Row="0" Grid.Column="2" Content="C" Click="BotonC_Click" Margin="2" FontSize="25" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+                <Button Grid.Row="0" Grid.Column="3" Content="⇐" Click="BotonRetroceso_Click" Margin="2" FontSize="30" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+
+                <Button Grid.Row="1" Grid.Column="0" Content="⅟x"  Margin="2" FontSize="25" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="x²"  Margin="2" FontSize="25" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="²√x" Margin="2" FontSize="20" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+                <Button Grid.Row="1" Grid.Column="3" Content="÷" Click="BotonOperacion_Click" Margin="2" FontSize="40" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+
+                <Button Grid.Row="2" Grid.Column="0" Content="7" Click="Button_Num_Click"  Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="8" Click="Button_Num_Click"  Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="2" Grid.Column="2" Content="9" Click="Button_Num_Click"  Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="2" Grid.Column="3" Content="✕" Click="BotonOperacion_Click" Margin="2" FontSize="22" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+
+                <Button Grid.Row="3" Grid.Column="0" Content="4" Click="Button_Num_Click" Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="5" Click="Button_Num_Click" Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="3" Grid.Column="2" Content="6" Click="Button_Num_Click" Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="3" Grid.Column="3" Content="-" Click="BotonOperacion_Click"  Margin="2" FontSize="40" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+
+                <Button Grid.Row="4" Grid.Column="0" Content="1" Click="Button_Num_Click" Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="4" Grid.Column="1" Content="2" Click="Button_Num_Click" Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="4" Grid.Column="2" Content="3" Click="Button_Num_Click" Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="4" Grid.Column="3" Content="+" Click="BotonOperacion_Click" Margin="2" FontSize="40" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF515151" Foreground="White"/>
+
+                <Button Grid.Row="5" Grid.Column="0" Content="+/-" Click="BotonSigno_Click" Margin="2" FontSize="25" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="5" Grid.Column="1" Content="0" Click="Button_Num_Click"  Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="5" Grid.Column="2" Content="," Click="Button_Num_Click" Margin="2" FontSize="35" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FF656565" Foreground="White"/>
+                <Button Grid.Row="5" Grid.Column="3" Content="=" Click="Button_Igual_Click" Margin="2" FontSize="45" FontFamily="Barlow Condensed" FontWeight="Bold" Background="#FFD9B769" Foreground="#FF2B2B2B"/>
+
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
