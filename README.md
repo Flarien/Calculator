@@ -13,10 +13,9 @@ Esta es mi primera calculadora 🎉, inspirada en la de Windows y creada con C# 
 ---
 ## 🖼 Captura de pantalla  
 
-<p align="center">
-  <img src="https://res.cloudinary.com/dciovdqaf/image/upload/v1742846454/calculator_rx6epl.webp" width="400">
+<p align="left">
+  <img src="https://res.cloudinary.com/dciovdqaf/image/upload/v1742846454/calculator_rx6epl.webp" width="200">
 </p>
-![Calculadora WPF](https://res.cloudinary.com/dciovdqaf/image/upload/v1742846454/calculator_rx6epl.webp)
 
 ## 🚀 Instalación
 
