@@ -11,6 +11,9 @@ Esta es mi primera calculadora 🎉, inspirada en la de Windows y creada con C# 
 - 🔜 Botones de memoria (M+, M-, MS, MC) (pendiente de implementación)
 
 ---
+## 🖼 Captura de pantalla  
+
+![Calculadora WPF]([https://res.cloudinary.com/tu-cuenta/image/upload/v1234567890/calculadora.png](https://res.cloudinary.com/dciovdqaf/image/upload/v1742846454/calculator_rx6epl.webp))
 
 ## 🚀 Instalación
 
